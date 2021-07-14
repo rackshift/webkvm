@@ -35,7 +35,7 @@ fi
 SESSION=`echo "$GET_COOKIE" | grep SESSION_COOKIE | awk -F "'" '{print $4}'`
 
 if [ -z $SESSION ];then
-	echo "cannot get sesion_cookie from response : $response"
+	echo "cannot get sesion_cookie from response : $SESSION"
 	exit 1
 fi
 
