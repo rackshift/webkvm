@@ -7,4 +7,4 @@ apt-get install -y vim net-tools && \
 apt-get install -y icedtea-netx && \
 apt-get install -y curl
 
-COPY startup.inspur.4.40.sh /startapp.sh
+COPY startup.sh /startapp.sh
