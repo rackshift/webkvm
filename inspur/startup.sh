@@ -13,10 +13,12 @@ fi
 
 if [ -z "$USER" ];then
 	echo please set "USER" environment !
+	exit 1
 fi
 
 if [ -z "$PASSWD" ];then
-echo please set "PASSWD" enviroment !
+	echo please set "PASSWD" enviroment !
+	exit 1
 fi
 
 
