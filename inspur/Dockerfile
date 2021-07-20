@@ -1,10 +1,3 @@
-FROM domistyle/idrac6
-
-MAINTAINER zhangdahai
-
-RUN apt-get update && \
-apt-get install -y vim net-tools && \
-apt-get install -y icedtea-netx && \
-apt-get install -y curl
+FROM registry.cn-qingdao.aliyuncs.com/x-lab/kvm-base:v1.0.0 
 
 COPY startup.sh /startapp.sh
