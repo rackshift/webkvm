@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="https://${HOST}//remote_console">
+    <information>
+        <title>JViewer</title>
+        <vendor>American Megatrends, Inc.</vendor>
+        <description kind="one-line">JViewer Console Redirection Application</description>
+        <description kind="tooltip">JViewer Console Redirection Application</description>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.5* 1.6*" initial-heap-size="100m" max-heap-size="256m" java-vm-args="-XX:+DisableExplicitGC"/>
+    </resources>
+    <resources>
+        <j2se version="1.5+"/>
+        <jar href="release/JViewer.jar"/>
+    </resources>
+    <resources os="Windows" arch="x86">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Win32.jar"/>
+    </resources>
+    <resources os="Windows" arch="amd64">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Win64.jar"/>
+    </resources>
+    <resources os="Linux" arch="x86">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Linux_x86_32.jar"/>
+    </resources>
+    <resources os="Linux" arch="i386">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Linux_x86_32.jar"/>
+    </resources>
+    <resources os="Linux" arch="x86_64">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Linux_x86_64.jar"/>
+    </resources>
+    <resources os="Linux" arch="amd64">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Linux_x86_64.jar"/>
+    </resources>
+    <resources os="Mac OS X" arch="i386">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Mac32.jar"/>
+    </resources>
+    <resources os="Mac OS X" arch="x86_64">
+        <j2se version="1.5+"/>
+        <nativelib href="release/Mac64.jar"/>
+    </resources>
+    <application-desc>
+        <argument>-apptype</argument>
+        <argument>JViewer</argument>
+        <argument>-hostname</argument>
+        <argument>${HOST}</argument>
+        <argument>-kvmmode</argument>
+        <argument>2</argument>
+        <argument>-kvmtoken</argument>
+        <argument>${TOKEN}</argument>
+        <argument>-kvmsecure</argument>
+        <argument>0</argument>
+        <argument>-kvmport</argument>
+        <argument>7578</argument>
+        <argument>-vmsecure</argument>
+        <argument>0</argument>
+        <argument>-cdstate</argument>
+        <argument>1</argument>
+        <argument>-fdstate</argument>
+        <argument>1</argument>
+        <argument>-hdstate</argument>
+        <argument>1</argument>
+        <argument>-cdport</argument>
+        <argument>5120</argument>
+        <argument>-fdport</argument>
+        <argument>5122</argument>
+        <argument>-hdport</argument>
+        <argument>5123</argument>
+        <argument>-cdnum</argument>
+        <argument>2</argument>
+        <argument>-fdnum</argument>
+        <argument>1</argument>
+        <argument>-hdnum</argument>
+        <argument>2</argument>
+        <argument>-singleportenabled</argument>
+        <argument>0</argument>
+        <argument>-ldapuser</argument>
+        <argument>0</argument>
+        <argument>-extendedpriv</argument>
+        <argument>259</argument>
+        <argument>-keyboardlayout</argument>
+        <argument>AD</argument>
+        <argument>-localization</argument>
+        <argument>cn</argument>
+        <argument>-retrycount</argument>
+        <argument>4</argument>
+        <argument>-retryinterval</argument>
+        <argument>5</argument>
+        <argument>-kvmstatus</argument>
+        <argument>1</argument>
+        <argument>-kvmcdnum</argument>
+        <argument>2</argument>
+        <argument>-kvmfdnum</argument>
+        <argument>1</argument>
+        <argument>-kvmhdnum</argument>
+        <argument>2</argument>
+        <argument>-webcookie</argument>
+        <argument>${SESSION}</argument>
+        <argument>-isUIS</argument>
+        <argument>0</argument>
+        <argument>-isSpe</argument>
+        <argument>16978692</argument>
+        <argument>-oemfeatures</argument>
+        <argument>170</argument>
+    </application-desc>
+</jnlp>
