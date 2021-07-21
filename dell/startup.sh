@@ -6,7 +6,7 @@ HOST=${HOST}
 USER=${USER}
 PASSWD=${PASSWD}
 export DISPLAY_WIDTH=1024
-export DISPLAY_HEIGHT=800
+export DISPLAY_HEIGHT=768
 
 if [ -z "$HOST" ];then
 	echo please set "HOST" environment !
