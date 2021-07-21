@@ -3,6 +3,7 @@
 ```
 docker run -d -p 5803:5800 -e HOST=xxx -e USER=xxx -e PASSWD=xxx -e APP_NAME=IDRAC8 registry.cn-qingdao.aliyuncs.com/x-lab/kvm-dell:v1.0.0
 ```
+直接打开 http://ip:5800
 # 已支持的机型
 | 品牌 | 镜像 |
 | :-----| :----- | 
@@ -11,3 +12,6 @@ docker run -d -p 5803:5800 -e HOST=xxx -e USER=xxx -e PASSWD=xxx -e APP_NAME=IDR
 | 华3 | registry.cn-qingdao.aliyuncs.com/x-lab/kvm-h3c:v1.0.0 |
 | 超微 | registry.cn-qingdao.aliyuncs.com/x-lab/kvm-supermicro:v1.0.0 |
 | DELL | registry.cn-qingdao.aliyuncs.com/x-lab/kvm-dell:v1.0.0 |
+
+# 效果图
+![runnob](https://fit2cloud2-offline-installer.oss-cn-beijing.aliyuncs.com/rackshift/img/webkvm.png)
