@@ -43,7 +43,7 @@ fi
 
 wget -O /app/jviewer.jnlp --tries=2 --no-check-certificate --header "Cookie:SessionCookie=${SESSION};" "https://${HOST}/Java/jviewer.jnlp?EXTRNIP=${HOST}&JNLPSTR=JViewer"
 
-if [ -f /jviewer.jnlp ];then
+if [ -f /app/jviewer.jnlp ];then
 	chmod +x /app/jviewer.jnlp
 fi
 javaws /app/jviewer.jnlp

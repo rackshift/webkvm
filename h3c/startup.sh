@@ -60,7 +60,7 @@ sed -i "s/\${SESSION}/${SESSION}/g" /app/jviewer-template.jnlp
 
 mv /app/jviewer-template.jnlp /app/jviewer.jnlp
 
-if [ -f /jviewer.jnlp ];then
+if [ -f /app/jviewer.jnlp ];then
 	chmod +x /app/jviewer.jnlp
 fi
 javaws /app/jviewer.jnlp

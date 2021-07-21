@@ -45,7 +45,7 @@ fi
 
 wget -O /app/jviewer.jnlp --tries=2 --no-check-certificate --header "Cookie:${SESSION};" "https://${HOST}/cgi/url_redirect.cgi?url_name=ikvm&url_type=jwsk" 
 
-if [ -f /jviewer.jnlp ];then
+if [ -f /app/jviewer.jnlp ];then
 	chmod +x /app/jviewer.jnlp
 fi
 javaws /app/jviewer.jnlp

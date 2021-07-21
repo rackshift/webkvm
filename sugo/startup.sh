@@ -3,10 +3,10 @@
 # Set BMC info
 
 HOST=${HOST}
-USER=${USER}
-PASSWD=${PASSWD}
+USER=`node /app/encrypt.js ${USER} 16| xargs`
+PASSWD=`node /app/encrypt.js ${PASSWD} | xargs`
 export DISPLAY_WIDTH=1024
-export DISPLAY_HEIGHT=800
+export DISPLAY_HEIGHT=768
 
 if [ -z "$HOST" ];then
 	echo please set "HOST" environment !
@@ -23,16 +23,10 @@ if [ -z "$PASSWD" ];then
 	exit 1
 fi
 
-
-#Base64 encode
-
-USER=`echo -n $USER | base64 | base64`
-PASSWD=`echo -n $PASSWD | base64 | base64`
-
 # Login to BMC WEB Server to Get JNLP 
 
-GET_COOKIEURL="https://${HOST}/api/session"
-PAYLOAD="username=${USER}&password=${PASSWD}&log_type=1"
+GET_COOKIEURL="https://${HOST}/api/secure_session"
+PAYLOAD="username=${USER}&password=${PASSWD}"
 
 GET_COOKIE=`curl -i -k -X POST -d "${PAYLOAD}" "${GET_COOKIEURL}"`
 
@@ -49,16 +43,7 @@ if [ -z $SESSION ];then
 	exit 1
 fi
 
-#GET jnlp token
-TOKEN_RES=`curl -i -k -X GET -H "Cookie:$SESSION;" -H "X-CSRFTOKEN:$CSRF" "https://${HOST}/api/kvm/token"`
-TOKEN=`echo $TOKEN_RES | awk -F 'token' '{print $2}' | awk -F '"' '{printf $3}'`
-SESSION=`echo "$SESSION" | awk -F ';' '{printf $1}' | awk -F 'QSESSIONID=' '{print $2}'`
-
-sed -i "s/\${HOST}/${HOST}/g" /app/jviewer-template.jnlp
-sed -i "s/\${TOKEN}/${TOKEN}/g" /app/jviewer-template.jnlp
-sed -i "s/\${SESSION}/${SESSION}/g" /app/jviewer-template.jnlp
-
-mv /app/jviewer-template.jnlp /app/jviewer.jnlp
+wget -O /app/jviewer.jnlp --no-check-certificate --header="Cookie:$SESSION" --header="X-CSRFTOKEN:$CSRF" "https://${HOST}/api/kvmjnlp?&JNLPSTR=JViewer&locale=root"
 
 if [ -f /app/jviewer.jnlp ];then
 	chmod +x /app/jviewer.jnlp
