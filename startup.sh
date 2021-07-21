@@ -9,17 +9,17 @@ if [ -z $VENDOR ];then
   echo "Inspur,DELL,H3C,Supermicro,Suma"
   exit 1
 fi
-dir=/scripts
+
 if [[ $VENDOR == DEL* ]];then
-  dir=$dir/dell
+  dir=/dell
 elif [[ $VENDOR == Inspur* ]];then
-  dir=$dir/inspur
+  dir=/inspur
 elif [[ $VENDOR == *H3C* ]];then
-  dir=$dir/h3c
+  dir=/h3c
 elif [[ $VENDOR == Supermicro* ]];then
-  dir=$dir/supermicro
+  dir=/supermicro
 elif [[ $VENDOR == Suma* ]];then
-  dir=$dir/sugo
+  dir=/sugo
 else
   echo "Not supported Vendor: $VENDOR"
   exit 1
