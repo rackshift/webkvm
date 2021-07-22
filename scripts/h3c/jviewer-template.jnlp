@@ -89,8 +89,8 @@
         <argument>259</argument>
         <argument>-keyboardlayout</argument>
         <argument>AD</argument>
-        <argument>-localization</argument>
-        <argument>cn</argument>
+        <argument>-lang</argument>
+        <argument>EN</argument>
         <argument>-retrycount</argument>
         <argument>4</argument>
         <argument>-retryinterval</argument>
