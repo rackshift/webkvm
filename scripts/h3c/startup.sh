@@ -54,11 +54,11 @@ TOKEN_RES=`curl -i -k -X GET -H "Cookie:$SESSION;" -H "X-CSRFTOKEN:$CSRF" "https
 TOKEN=`echo $TOKEN_RES | awk -F 'token' '{print $2}' | awk -F '"' '{printf $3}'`
 SESSION=`echo "$SESSION" | awk -F ';' '{printf $1}' | awk -F 'QSESSIONID=' '{print $2}'`
 
-sed -i "s/\${HOST}/${HOST}/g" /app/jviewer-template.jnlp
-sed -i "s/\${TOKEN}/${TOKEN}/g" /app/jviewer-template.jnlp
-sed -i "s/\${SESSION}/${SESSION}/g" /app/jviewer-template.jnlp
+cp /h3c/jviewer-template.jnlp /app/jviewer.jnlp
 
-mv /app/jviewer-template.jnlp /app/jviewer.jnlp
+sed -i "s/\${HOST}/${HOST}/g" /app/jviewer.jnlp
+sed -i "s/\${TOKEN}/${TOKEN}/g" /app/jviewer.jnlp
+sed -i "s/\${SESSION}/${SESSION}/g" /app/jviewer.jnlp
 
 if [ -f /app/jviewer.jnlp ];then
 	chmod +x /app/jviewer.jnlp

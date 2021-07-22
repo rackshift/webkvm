@@ -3,8 +3,8 @@
 # Set BMC info
 
 HOST=${HOST}
-USER=`node ./encrypt.js ${USER} 16| xargs`
-PASSWD=`node ./encrypt.js ${PASSWD} | xargs`
+USER=`node /sugo/encrypt.js ${USER} 16| xargs`
+PASSWD=`node /sugo/encrypt.js ${PASSWD} | xargs`
 export DISPLAY_WIDTH=1024
 export DISPLAY_HEIGHT=768
 

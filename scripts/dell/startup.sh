@@ -5,7 +5,7 @@
 HOST=${HOST}
 USER=${USER}
 PASSWD=${PASSWD}
-export DISPLAY_WIDTH=1024
+export DISPLAY_WIDTH=1280
 export DISPLAY_HEIGHT=768
 
 if [ -z "$HOST" ];then
