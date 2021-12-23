@@ -20,6 +20,8 @@ elif [[ $VENDOR == Supermicro* ]];then
   dir=/supermicro
 elif [[ $VENDOR == Suma* ]];then
   dir=/sugo
+elif [[ $VENDOR == Lenovo* ]];then
+  dir=/lenovo
 else
   echo "Not supported Vendor: $VENDOR"
   exit 1
