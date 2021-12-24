@@ -14,7 +14,7 @@ docker run -d -p 5800:5800 -e VENDOR=DELL -e HOST=xxx -e USER=xxx -e PASSWD=xxx 
 | 华3 | 1.30 |
 | 超微 | 1.71 |
 | DELL | 2.50 IDRAC8 等同 |
-| 联想 | 1.72 |
+| 联想 | 7.2 |
 其他不支持的版本欢迎提交  ISSUE
 
 # 效果图
